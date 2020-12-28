@@ -5,6 +5,7 @@ import 'package:la_daurada/UI/Custom_Widget/custom_button.dart';
 import 'package:la_daurada/UI/Custom_Widget/custom_mediumtext.dart';
 import 'package:la_daurada/UI/Custom_Widget/custom_smalltext.dart';
 import 'package:la_daurada/UI/Custom_Widget/custom_textfield.dart';
+import 'package:la_daurada/UI/Localization/demo_localization.dart';
 
 class RecoverPassword extends StatefulWidget {
   @override
@@ -38,7 +39,7 @@ class _RecoverPasswordState extends State<RecoverPassword> {
                     SizedBox(
                       width: SizeConfig.safeBlockHorizontal * 3,
                     ),
-                    CustomBigText("Recover password")
+                    CustomBigText(DemoLocalizations.of(context).getTranslatevalues('recover-pass'))
                   ],
                 ),
                 Padding(
@@ -46,12 +47,12 @@ class _RecoverPasswordState extends State<RecoverPassword> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomSmallText("Email*", Color(0xff000938)),
+                      CustomSmallText(DemoLocalizations.of(context).getTranslatevalues('email'), Color(0xff000938)),
                       SizedBox(
                         height: SizeConfig.safeBlockVertical * 1,
                       ),
                       CustomTextfield(
-                          "Enter your email", TextInputType.emailAddress, Color(0xff000938)),
+                          DemoLocalizations.of(context).getTranslatevalues('enter-email'), TextInputType.emailAddress, Color(0xff000938)),
                       SizedBox(
                         height: SizeConfig.safeBlockVertical * 2,
                       ),
@@ -62,13 +63,13 @@ class _RecoverPasswordState extends State<RecoverPassword> {
                   height: SizeConfig.safeBlockVertical * 3,
                 ),
                 CustomButton(
-                    context, CustomMediumText("Recover password"), () {}),
+                    context, CustomMediumText(DemoLocalizations.of(context).getTranslatevalues('recover-pass')), () {}),
                 SizedBox(
                   height: SizeConfig.safeBlockVertical * 2,
                 ),
                 Center(
                   child: new Text(
-                    "We have sent you an email to ",
+                    DemoLocalizations.of(context).getTranslatevalues('sent-email'),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: "Poppins",
@@ -80,7 +81,7 @@ class _RecoverPasswordState extends State<RecoverPassword> {
                 ),
                 Center(
                   child: new Text(
-                    "recover your password",
+                   DemoLocalizations.of(context).getTranslatevalues('recover-text'),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: "Poppins",

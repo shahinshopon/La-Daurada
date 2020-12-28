@@ -52,6 +52,11 @@ flutter:
   assets:
     - assets/app-text.png
     - assets/welcome.png
+    - assets/home-icon.png
+    - assets/event-icon.png
+    - assets/ticket-icon.png
+    - assets/membership-icon.png
+    - assets/profile-icon.png
     - assets/carousel-img1.png
     - assets/carousel-img2.png
     - assets/carousel-img3.png

@@ -7,6 +7,7 @@ import 'package:la_daurada/UI/Custom_Widget/custom_button.dart';
 import 'package:la_daurada/UI/Custom_Widget/custom_mediumtext.dart';
 import 'package:la_daurada/UI/Custom_Widget/custom_smalltext.dart';
 import 'package:la_daurada/UI/Custom_Widget/custom_textfield.dart';
+import 'package:la_daurada/UI/Localization/demo_localization.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -42,7 +43,7 @@ class _SignUpState extends State<SignUp> {
                 SizedBox(
                   width: SizeConfig.safeBlockHorizontal * 3,
                 ),
-                CustomBigText("Sign up")
+                CustomBigText( DemoLocalizations.of(context).getTranslatevalues('sign-up'))
               ],
             ),
             Padding(
@@ -50,34 +51,34 @@ class _SignUpState extends State<SignUp> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomSmallText("First Name", Color(0xff000938)),
+                  CustomSmallText(DemoLocalizations.of(context).getTranslatevalues('first-name'), Color(0xff000938)),
                   SizedBox(
                     height: SizeConfig.safeBlockVertical * 1,
                   ),
-                  CustomTextfield("Enter your first name", TextInputType.text,
+                  CustomTextfield(DemoLocalizations.of(context).getTranslatevalues('enter-first-name'), TextInputType.text,
                       Color(0xff000938)),
                   SizedBox(
                     height: SizeConfig.safeBlockVertical * 2,
                   ),
-                  CustomSmallText("Last name", Color(0xff000938)),
+                  CustomSmallText(DemoLocalizations.of(context).getTranslatevalues('last-name'), Color(0xff000938)),
                   SizedBox(
                     height: SizeConfig.safeBlockVertical * 1,
                   ),
-                  CustomTextfield("Enter your last name", TextInputType.text,
+                  CustomTextfield(DemoLocalizations.of(context).getTranslatevalues('enter-last-name'), TextInputType.text,
                       Color(0xff000938)),
                   SizedBox(
                     height: SizeConfig.safeBlockVertical * 2,
                   ),
-                  CustomSmallText("Email*", Color(0xff000938)),
+                  CustomSmallText(DemoLocalizations.of(context).getTranslatevalues('email'), Color(0xff000938)),
                   SizedBox(
                     height: SizeConfig.safeBlockVertical * 1,
                   ),
-                  CustomTextfield("Enter your email",
+                  CustomTextfield(DemoLocalizations.of(context).getTranslatevalues('enter-email'),
                       TextInputType.emailAddress, Color(0xff000938)),
                   SizedBox(
                     height: SizeConfig.safeBlockVertical * 2,
                   ),
-                  CustomSmallText("Password", Color(0xff000938)),
+                  CustomSmallText(DemoLocalizations.of(context).getTranslatevalues('password'), Color(0xff000938)),
                   SizedBox(
                     height: SizeConfig.safeBlockVertical * 1,
                   ),
@@ -85,7 +86,7 @@ class _SignUpState extends State<SignUp> {
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: !_passwordVisible,
                     decoration: InputDecoration(
-                        hintText: "Enter your password",
+                        hintText: DemoLocalizations.of(context).getTranslatevalues('enter-pass'),
                         suffixIcon: IconButton(
                           icon: Icon(
                             // Based on passwordVisible state choose the icon
@@ -119,60 +120,60 @@ class _SignUpState extends State<SignUp> {
                   ),
                   RichText(
                       text: TextSpan(
-                          text: 'By clicking on "Register" you accept the ',
+                          text: DemoLocalizations.of(context).getTranslatevalues('register-text'),
                           style: TextStyle(
                             fontFamily: "Poppins",
-                            fontSize: SizeConfig.safeBlockVertical * 2,
+                            fontSize: SizeConfig.safeBlockVertical * 1.8,
                             color: Color(0xff9BABC5),
                           ),
                           children: [
                         TextSpan(
-                          text: "Privacy",
+                          text: DemoLocalizations.of(context).getTranslatevalues('privacy'),
                           recognizer: new TapGestureRecognizer()
                             ..onTap = () {
                               // Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen()));
                             },
                           style: TextStyle(
                             fontFamily: "Poppins",
-                            fontSize: SizeConfig.safeBlockVertical * 2,
+                            fontSize: SizeConfig.safeBlockVertical * 1.8,
                             color: Color(0xff6B75FF),
                           ),
                         )
                       ])),
                   RichText(
                       text: TextSpan(
-                          text: 'Policy ',
+                          text: DemoLocalizations.of(context).getTranslatevalues('policy'),
                           recognizer: new TapGestureRecognizer()
                             ..onTap = () {
                               // Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen()));
                             },
                           style: TextStyle(
                             fontFamily: "Poppins",
-                            fontSize: SizeConfig.safeBlockVertical * 2,
+                            fontSize: SizeConfig.safeBlockVertical * 1.8,
                             color: Color(0xff6B75FF),
                           ),
                           children: [
                         TextSpan(
-                          text: "and the ",
+                          text: DemoLocalizations.of(context).getTranslatevalues('and-the'),
                           recognizer: new TapGestureRecognizer()
                             ..onTap = () {
                               // Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen()));
                             },
                           style: TextStyle(
                             fontFamily: "Poppins",
-                            fontSize: SizeConfig.safeBlockVertical * 2,
+                            fontSize: SizeConfig.safeBlockVertical * 1.8,
                             color: Color(0xff9BABC5),
                           ),
                         ),
                         TextSpan(
-                          text: "Terms and Conditions",
+                          text: DemoLocalizations.of(context).getTranslatevalues('terms & condition'),
                           recognizer: new TapGestureRecognizer()
                             ..onTap = () {
                               // Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen()));
                             },
                           style: TextStyle(
                             fontFamily: "Poppins",
-                            fontSize: SizeConfig.safeBlockVertical * 2,
+                            fontSize: SizeConfig.safeBlockVertical * 1.8,
                             color: Color(0xff6B75FF),
                           ),
                         )
@@ -183,7 +184,7 @@ class _SignUpState extends State<SignUp> {
             SizedBox(
               height: SizeConfig.safeBlockVertical * 1,
             ),
-            CustomButton(context, CustomMediumText("Registration"), () {
+            CustomButton(context, CustomMediumText(DemoLocalizations.of(context).getTranslatevalues('registration')), () {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => Login()));
             }),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:la_daurada/Size_Config/sizeconfig.dart';
 import 'package:la_daurada/UI/Custom_Widget/custom_bigtext.dart';
 import 'package:la_daurada/UI/Custom_Widget/custom_smalltext.dart';
+import 'package:la_daurada/UI/Localization/demo_localization.dart';
 
 class Event extends StatelessWidget {
   @override
@@ -16,7 +17,7 @@ class Event extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(left: SizeConfig.safeBlockHorizontal * 4),
-            child: CustomBigText("Upcoming events"),
+            child: CustomBigText(DemoLocalizations.of(context).getTranslatevalues('upcoming-events')),
           ),
           Padding(
             padding: EdgeInsets.all(SizeConfig.safeBlockHorizontal * 2),
@@ -24,22 +25,22 @@ class Event extends StatelessWidget {
               children: [
                 CustomEventCard(
                   "assets/event1.png",
-                  "29",
-                  "MAY",
-                  "Watch Live Concert",
-                  "Pacha Barcelona",
-                  "Jue 10:00 - 12:00"
+                  DemoLocalizations.of(context).getTranslatevalues('date'),
+                  DemoLocalizations.of(context).getTranslatevalues('month'),
+                  DemoLocalizations.of(context).getTranslatevalues('live-concert'),
+                  DemoLocalizations.of(context).getTranslatevalues('location'),
+                  DemoLocalizations.of(context).getTranslatevalues('time')
                 ),
                 SizedBox(
             height: SizeConfig.safeBlockVertical * 2.5,
           ),
            CustomEventCard(
                   "assets/event2.png",
-                  "29",
-                  "MAY",
-                  "Watch Live Concert",
-                  "Pacha Barcelona",
-                  "Jue 10:00 - 12:00"
+                  DemoLocalizations.of(context).getTranslatevalues('date'),
+                  DemoLocalizations.of(context).getTranslatevalues('month'),
+                  DemoLocalizations.of(context).getTranslatevalues('live-concert'),
+                  DemoLocalizations.of(context).getTranslatevalues('location'),
+                  DemoLocalizations.of(context).getTranslatevalues('time')
                 ),
 
               ],

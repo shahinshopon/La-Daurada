@@ -8,6 +8,7 @@ import 'package:la_daurada/UI/Custom_Widget/custom_button.dart';
 import 'package:la_daurada/UI/Custom_Widget/custom_mediumtext.dart';
 import 'package:la_daurada/UI/Custom_Widget/custom_smalltext.dart';
 import 'package:la_daurada/UI/Custom_Widget/custom_textfield.dart';
+import 'package:la_daurada/UI/Localization/demo_localization.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -48,7 +49,7 @@ class _LoginState extends State<Login> {
                     SizedBox(
                       width: SizeConfig.safeBlockHorizontal * 3,
                     ),
-                    CustomBigText("Log in")
+                    CustomBigText(DemoLocalizations.of(context).getTranslatevalues('login'))
                   ],
                 ),
                 Padding(
@@ -61,11 +62,11 @@ class _LoginState extends State<Login> {
                         height: SizeConfig.safeBlockVertical * 1,
                       ),
                       CustomTextfield(
-                          "Enter your email", TextInputType.emailAddress, Color(0xff000938)),
+                          DemoLocalizations.of(context).getTranslatevalues('enter-email'), TextInputType.emailAddress, Color(0xff000938)),
                       SizedBox(
                         height: SizeConfig.safeBlockVertical * 2,
                       ),
-                      CustomSmallText("Password", Color(0xff000938)),
+                      CustomSmallText(DemoLocalizations.of(context).getTranslatevalues('password'), Color(0xff000938)),
                       SizedBox(
                         height: SizeConfig.safeBlockVertical * 1,
                       ),
@@ -73,7 +74,7 @@ class _LoginState extends State<Login> {
                         keyboardType: TextInputType.visiblePassword,
                         obscureText: !_passwordVisible,
                         decoration: InputDecoration(
-                            hintText: "Enter your password",
+                            hintText:DemoLocalizations.of(context).getTranslatevalues('enter-pass'),
                             suffixIcon: IconButton(
                               icon: Icon(
                                 // Based on passwordVisible state choose the icon
@@ -108,7 +109,7 @@ class _LoginState extends State<Login> {
                 SizedBox(
                   height: SizeConfig.safeBlockVertical * 3,
                 ),
-                CustomButton(context, CustomMediumText("Log in"), () {
+                CustomButton(context, CustomMediumText(DemoLocalizations.of(context).getTranslatevalues('login')), () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => BottomNavController()));
                 }),
@@ -124,7 +125,7 @@ class _LoginState extends State<Login> {
                   },
                   child: Center(
                     child: new Text(
-                      "Forgot password?",
+                      DemoLocalizations.of(context).getTranslatevalues('forgot-pass'),
                       style: TextStyle(
                         fontFamily: "Poppins",
                         fontWeight: FontWeight.w500,

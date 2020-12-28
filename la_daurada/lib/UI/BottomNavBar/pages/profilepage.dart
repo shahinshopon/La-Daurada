@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:la_daurada/Size_Config/sizeconfig.dart';
-import 'package:la_daurada/UI/BottomNavBar/pages/user_info.dart';
+import 'package:la_daurada/UI/UserInformation/user_info.dart';
 import 'package:la_daurada/UI/Custom_Widget/custom_bigtext.dart';
 import 'package:la_daurada/UI/Custom_Widget/custom_smalltext.dart';
+import 'package:la_daurada/UI/Localization/demo_localization.dart';
 
 class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: SafeArea(
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -19,7 +20,7 @@ class Profile extends StatelessWidget {
           Padding(
             padding:
                 EdgeInsets.only(left: SizeConfig.safeBlockHorizontal * 3.5),
-            child: CustomBigText("Profile"),
+            child: CustomBigText(DemoLocalizations.of(context).getTranslatevalues('profile')),
           ),
           SizedBox(
             height: SizeConfig.safeBlockVertical * 4,
@@ -38,7 +39,7 @@ class Profile extends StatelessWidget {
                   height: SizeConfig.safeBlockVertical * 2,
                 ),
                 new Text(
-                  "alexa@gmail.com",
+                  DemoLocalizations.of(context).getTranslatevalues('gmail-id'),
                   style: TextStyle(
                     fontFamily: "Poppins",
                     fontSize: SizeConfig.safeBlockVertical * 2,
@@ -55,7 +56,7 @@ class Profile extends StatelessWidget {
             padding: EdgeInsets.only(left: SizeConfig.safeBlockHorizontal * 6),
             child: Column(
               children: [
-                ReusebleRow("assets/chat.png", "Message", Color(0xff000938)),
+                ReusebleRow("assets/chat.png", DemoLocalizations.of(context).getTranslatevalues('message'), Color(0xff000938)),
                 SizedBox(
                   height: SizeConfig.safeBlockVertical * 2,
                 ),
@@ -63,23 +64,23 @@ class Profile extends StatelessWidget {
                   onTap: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>UserInformation()));
                   },
-                  child: ReusebleRow("assets/user.png", "User information", Color(0xff000938))),
+                  child: ReusebleRow("assets/user.png", DemoLocalizations.of(context).getTranslatevalues('user-info'), Color(0xff000938))),
                 SizedBox(
                   height: SizeConfig.safeBlockVertical * 2,
                 ),
-                ReusebleRow("assets/privacy.png", "Privacy policy", Color(0xff000938)),
+                ReusebleRow("assets/privacy.png",DemoLocalizations.of(context).getTranslatevalues('privacy-policy'), Color(0xff000938)),
                 SizedBox(
                   height: SizeConfig.safeBlockVertical * 2,
                 ),
-                ReusebleRow("assets/device.png", "Device ID: 1206354", Color(0xff9BABC5)),
+                ReusebleRow("assets/device.png", DemoLocalizations.of(context).getTranslatevalues('device-id'), Color(0xff9BABC5)),
                 SizedBox(
                   height: SizeConfig.safeBlockVertical * 2,
                 ),
-                ReusebleRow("assets/version.png", "App version: 1.0.1", Color(0xff9BABC5)),
+                ReusebleRow("assets/version.png", DemoLocalizations.of(context).getTranslatevalues('app-version'), Color(0xff9BABC5)),
                 SizedBox(
                   height: SizeConfig.safeBlockVertical * 2,
                 ),
-                ReusebleRow("assets/logout.png", "Log out", Color(0xff9BABC5)),
+                ReusebleRow("assets/logout.png", DemoLocalizations.of(context).getTranslatevalues('log-out'), Color(0xff9BABC5)),
               ],
             ),
           )

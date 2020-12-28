@@ -112,9 +112,9 @@ class _WelcomePageState extends State<WelcomePage> {
                         fit: BoxFit.contain,
                       )),
                   CustomSmallText(
-                      DemoLocalizations.of(context).getTranslatevalues('second'), Color(0xff000938)),
+                      DemoLocalizations.of(context).getTranslatevalues('welcome-comunity'), Color(0xff000938)),
                   CustomSmallText(
-                       DemoLocalizations.of(context).getTranslatevalues('third'), Color(0xff000938)),
+                       DemoLocalizations.of(context).getTranslatevalues('welcome-discount'), Color(0xff000938)),
                   SizedBox(
                     height: SizeConfig.safeBlockVertical * 7.5,
                   ),
@@ -135,7 +135,7 @@ class _WelcomePageState extends State<WelcomePage> {
                             children: [
                               FaIcon(FontAwesomeIcons.facebook,
                                   color: Colors.white),
-                              CustomMediumText("Login with Facebook")
+                              CustomMediumText(DemoLocalizations.of(context).getTranslatevalues('login-fb'))
                             ],
                           ), () {
                         Navigator.push(context,
@@ -161,7 +161,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Continue with email",
+                          DemoLocalizations.of(context).getTranslatevalues('continue-email'),
                           style: TextStyle(
                             fontFamily: "Poppins",
                             fontSize: SizeConfig.safeBlockVertical * 2,
@@ -185,7 +185,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                       builder: (context) => Login()));
                             },
                             child:
-                                CustomSmallText("Log in", Color(0xff000938))),
+                                CustomSmallText(DemoLocalizations.of(context).getTranslatevalues('login'), Color(0xff000938))),
                         Container(
                             height: SizeConfig.safeBlockVertical * 3.5,
                             width: 1,
@@ -198,7 +198,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                       builder: (context) => SignUp()));
                             },
                             child:
-                                CustomSmallText("Sign up", Color(0xff000938))),
+                                CustomSmallText(DemoLocalizations.of(context).getTranslatevalues('sign-up'), Color(0xff000938))),
                       ])
                 ],
               ),

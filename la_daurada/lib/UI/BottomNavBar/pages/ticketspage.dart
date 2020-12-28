@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:la_daurada/Size_Config/sizeconfig.dart';
 import 'package:la_daurada/UI/Custom_Widget/custom_bigtext.dart';
 import 'package:la_daurada/UI/Custom_Widget/custom_smalltext.dart';
+import 'package:la_daurada/UI/Localization/demo_localization.dart';
 
 class Ticket extends StatelessWidget {
   @override
@@ -16,17 +17,24 @@ class Ticket extends StatelessWidget {
             SizedBox(
               height: SizeConfig.safeBlockVertical * 5,
             ),
-            CustomBigText("Tickets"),
+            CustomBigText(DemoLocalizations.of(context).getTranslatevalues('tickets')),
             SizedBox(
               height: SizeConfig.safeBlockVertical * 2.5,
             ),
-            ReusebleCard("assets/scanner.png", "Loco Lunes",
-                "LUN, 31 OCT 2020 | 23:59 - 06:00", "GRATIS"),
+            ReusebleCard(context,
+            "assets/scanner.png",
+             DemoLocalizations.of(context).getTranslatevalues('ticket-first-title'),
+             DemoLocalizations.of(context).getTranslatevalues('ticket-subtitle'),
+             DemoLocalizations.of(context).getTranslatevalues('ticket-color-first-text')),
             SizedBox(
               height: SizeConfig.safeBlockVertical * 3.5,
             ),
-            ReusebleCard("assets/scanner.png", "Un Jueves Tonto",
-                "SÁB, 31 OCT 2020 | 23:59 - 06:00", "15€       "),
+            ReusebleCard(
+              context,
+              "assets/scanner.png", 
+             DemoLocalizations.of(context).getTranslatevalues('ticket-second-title'),
+             DemoLocalizations.of(context).getTranslatevalues('ticket-subtitle'),
+             DemoLocalizations.of(context).getTranslatevalues('ticket-color-second-text')),
           ],
         ),
       )),
@@ -34,7 +42,7 @@ class Ticket extends StatelessWidget {
   }
 }
 
-Widget ReusebleCard(
+Widget ReusebleCard(BuildContext context,
     String url, String titletext, String subtitletext, String colortext) {
   return Card(
     elevation: 0,
@@ -87,7 +95,7 @@ Widget ReusebleCard(
                       SizedBox(
                         width: SizeConfig.safeBlockHorizontal * 1,
                       ),
-                      CustomSmallText("1", Color(0xff9BABC5))
+                      CustomSmallText(DemoLocalizations.of(context).getTranslatevalues('ticket-number'), Color(0xff9BABC5))
                     ],
                   )
                 ],

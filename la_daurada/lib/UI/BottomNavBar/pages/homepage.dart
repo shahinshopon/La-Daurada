@@ -4,8 +4,11 @@ import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:flutter_carousel_slider/carousel_slider_indicators.dart';
 import 'package:flutter_carousel_slider/carousel_slider_transforms.dart';
 import 'package:la_daurada/Size_Config/sizeconfig.dart';
-import 'package:la_daurada/UI/BottomNavBar/pages/slider_image.dart';
+import 'package:la_daurada/UI/Custom_Widget/custom_container_image.dart';
+import 'package:la_daurada/UI/Webview/webview_image.dart';
+import 'package:la_daurada/UI/Webview/webview_slider_image.dart';
 import 'package:la_daurada/UI/Custom_Widget/custom_bigtext.dart';
+import 'package:la_daurada/UI/Localization/demo_localization.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -45,7 +48,8 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomBigText("Home"),
+                  CustomBigText(
+                      DemoLocalizations.of(context).getTranslatevalues('home')),
                   SizedBox(
                     height: SizeConfig.safeBlockVertical * 1,
                   ),
@@ -79,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        WebViewPage(
+                                                        WebViewSliderImage(
                                                             url: url[index])));
                                           },
                                           child: Image.asset(
@@ -107,15 +111,27 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: SizeConfig.safeBlockVertical * 1,
                   ),
-                  CustomContainerImage("assets/carousel-img2.png"),
+                  GestureDetector(
+                      onTap: () {
+                       Navigator.push(context, MaterialPageRoute(builder: (context)=>WebViewImage()));
+                      },
+                      child: CustomContainerImage("assets/carousel-img2.png")),
                   SizedBox(
                     height: SizeConfig.safeBlockVertical * 1,
                   ),
-                  CustomContainerImage("assets/carousel-img3.png"),
+                  GestureDetector(
+                    onTap: () {
+                       Navigator.push(context, MaterialPageRoute(builder: (context)=>WebViewImage()));
+                      },
+                    child: CustomContainerImage("assets/carousel-img3.png")),
                   SizedBox(
                     height: SizeConfig.safeBlockVertical * 1,
                   ),
-                  CustomContainerImage("assets/carousel-img4.png"),
+                  GestureDetector(
+                   onTap: () {
+                       Navigator.push(context, MaterialPageRoute(builder: (context)=>WebViewImage()));
+                      },
+                    child: CustomContainerImage("assets/carousel-img4.png")),
                   SizedBox(
                     height: SizeConfig.safeBlockVertical * 1,
                   ),
@@ -129,20 +145,4 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-Widget CustomContainerImage(String url) {
-  return AspectRatio(
-    aspectRatio: 2.5,
-    child: Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(
-              Radius.circular(SizeConfig.safeBlockHorizontal * 2.5))),
-      child: ClipRRect(
-          borderRadius: BorderRadius.all(
-              Radius.circular(SizeConfig.safeBlockHorizontal * 2.5)),
-          child: Image.asset(
-            url,
-            fit: BoxFit.cover,
-          )),
-    ),
-  );
-}
+

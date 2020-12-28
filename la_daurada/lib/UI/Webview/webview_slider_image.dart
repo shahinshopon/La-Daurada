@@ -1,15 +1,14 @@
-
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class WebViewPage extends StatefulWidget {
+class WebViewSliderImage extends StatefulWidget {
   var url;
-  WebViewPage({this.url});
+  WebViewSliderImage({this.url});
   @override
-  _WebViewPageState createState() => _WebViewPageState();
+  _WebViewSliderImageState createState() => _WebViewSliderImageState();
 }
 
-class _WebViewPageState extends State<WebViewPage> {
+class _WebViewSliderImageState extends State<WebViewSliderImage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +18,6 @@ class _WebViewPageState extends State<WebViewPage> {
       body: WebView(
         initialUrl: "${widget.url}",
         javascriptMode: JavascriptMode.unrestricted,
-
       ),
     );
   }

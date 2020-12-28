@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:la_daurada/Size_Config/sizeconfig.dart';
 import 'package:la_daurada/UI/Custom_Widget/custom_bigtext.dart';
 import 'package:la_daurada/UI/Custom_Widget/custom_smalltext.dart';
+import 'package:la_daurada/UI/Localization/demo_localization.dart';
 
 class MembershipCard extends StatelessWidget {
   @override
@@ -19,7 +20,7 @@ class MembershipCard extends StatelessWidget {
             Padding(
               padding:
                   EdgeInsets.only(left: SizeConfig.safeBlockHorizontal * 4),
-              child: CustomBigText("Membership card"),
+              child: CustomBigText(DemoLocalizations.of(context).getTranslatevalues('member-card')),
             ),
             Padding(
               padding: EdgeInsets.all(SizeConfig.safeBlockHorizontal * 2),
@@ -80,10 +81,11 @@ class MembershipCard extends StatelessWidget {
                                 SizedBox(
                                   width: SizeConfig.safeBlockHorizontal * 3,
                                 ),
-                                CustomSmallText("Activated", Color(0xff000938))
+                                CustomSmallText(DemoLocalizations.of(context).getTranslatevalues('activated'),
+                                 Color(0xff000938))
                               ],
                             ),
-                            CustomSmallText("23:37:45", Color(0xff000938))
+                            CustomSmallText(DemoLocalizations.of(context).getTranslatevalues('card-time'), Color(0xff000938))
                           ],
                         ),
                         SizedBox(
@@ -101,7 +103,7 @@ class MembershipCard extends StatelessWidget {
                           height: SizeConfig.safeBlockVertical * 1.5,
                         ),
                         new Text(
-                          "Show this code to our staff \nto activate your card",
+                          DemoLocalizations.of(context).getTranslatevalues('card-text'),
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: "Poppins",
